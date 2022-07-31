@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate-study?characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;serverTimeZone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--删除对象后，使其OID置为null-->
+        <property name="use_identifier_rollback">true</property>
+
+        <!--设置Hibernate的事务隔离级别-->
+        <property name="connection.isolation">2</property>
+
+        <!--配置c3p0数据源-->
+        <property name="c3p0.max_size">10</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.acquire_increment">2</property>
+        <property name="c3p0.timeout">2000</property>
+        <property name="c3p0.idle_test_period">2000</property>
+
+        <property name="c3p0.max_statements">10</property>
+        <!--设置JDBC的Statement读取数据的时候每次从数据库中取出的记录条数-->
+        <property name="jdbc.fetch_size">100</property>
+        <!--设定对数据库进行批量删除，批量更新和批量插入的时候的批次大小-->
+        <property name="jdbc.batch_size">30</property>
+
+
+        <mapping resource="com/wyh/hibernatedemo/entity/News.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
