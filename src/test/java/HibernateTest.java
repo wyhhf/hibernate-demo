@@ -1,4 +1,6 @@
 import com.wyh.hibernatedemo.entity.News;
+import com.wyh.hibernatedemo.entity.Pay;
+import com.wyh.hibernatedemo.entity.Worker;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -15,7 +17,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class HibernateTest {
     private SessionFactory sessionFactory;
@@ -26,6 +27,7 @@ class HibernateTest {
     public void init() {
         Configuration configuration = new Configuration().configure();
         configuration.addClass(News.class);
+        configuration.addClass(Worker.class);
 
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 
@@ -41,6 +43,19 @@ class HibernateTest {
         transaction.commit();
         session.close();
         sessionFactory.close();
+    }
+
+    @Test
+    public void testComponent() {
+        Worker worker = new Worker();
+        Pay pay = new Pay();
+
+        pay.setMonthlyPay(6000);
+        pay.setYearPay(80000);
+        pay.setVocationWithPay(10);
+        worker.setName("王怡贺");
+        worker.setPay(pay);
+        session.save(worker);
     }
 
     @Test

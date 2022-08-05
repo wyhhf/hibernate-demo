@@ -5,13 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.username">root</property>
-        <property name="connection.password">123456</property>
+        <property name="connection.password">1111</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/hibernate-study?characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;serverTimeZone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true</property>
 
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
@@ -36,5 +36,8 @@
 
 
         <mapping resource="com/wyh/hibernatedemo/entity/News.hbm.xml"/>
+        <mapping resource="com/wyh/hibernatedemo/entity/Worker.hbm.xml"/>
+        <mapping resource="com/wyh/hibernatedemo/entity/n21/Customer.hbm.xml"/>
+        <mapping resource="com/wyh/hibernatedemo/entity/n21/Order.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

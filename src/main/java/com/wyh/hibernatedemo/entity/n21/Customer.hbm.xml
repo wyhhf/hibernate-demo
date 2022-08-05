@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.wyh.hibernatedemo.entity.n21">
+    <class name="Customer" table="customer">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="customer_id"/>
+            <generator class="native"/>
+        </id>
+        <property name="customerName" type="java.lang.String">
+            <column name="customer_name"/>
+        </property>
+    </class>
+</hibernate-mapping>

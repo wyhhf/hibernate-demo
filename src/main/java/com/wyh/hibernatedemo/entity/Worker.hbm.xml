@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.wyh.hibernatedemo.entity">
+    <class name="Worker" table="worker">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name"/>
+        </property>
+        <!--映射组成关系-->
+        <component name="pay" class="Pay">
+            <!--指定组成关系的组件的属性-->
+            <property name="monthlyPay" column="monthly_pay"/>
+            <property name="yearPay" column="year_pay"/>
+            <property name="vocationWithPay" column="vocation_with_pay"/>
+        </component>
+    </class>
+</hibernate-mapping>
