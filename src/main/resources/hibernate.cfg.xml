@@ -35,9 +35,11 @@
         <property name="jdbc.batch_size">30</property>
 
 
-        <mapping resource="com/wyh/hibernatedemo/entity/News.hbm.xml"/>
+        <!--<mapping resource="com/wyh/hibernatedemo/entity/News.hbm.xml"/>
         <mapping resource="com/wyh/hibernatedemo/entity/Worker.hbm.xml"/>
         <mapping resource="com/wyh/hibernatedemo/entity/n21/Customer.hbm.xml"/>
-        <mapping resource="com/wyh/hibernatedemo/entity/n21/Order.hbm.xml"/>
+        <mapping resource="com/wyh/hibernatedemo/entity/n21/Order.hbm.xml"/>-->
+        <mapping resource="com/wyh/hibernatedemo/entity/n21both/Customer.hbm.xml"/>
+        <mapping resource="com/wyh/hibernatedemo/entity/n21both/Order.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

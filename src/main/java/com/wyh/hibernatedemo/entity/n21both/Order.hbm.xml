@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
-<hibernate-mapping package="com.wyh.hibernatedemo.entity.n21">
+<hibernate-mapping package="com.wyh.hibernatedemo.entity.n21both">
     <class name="Order" table="orders">
         <id name="orderId" type="java.lang.Integer">
             <column name="order_id"/>
