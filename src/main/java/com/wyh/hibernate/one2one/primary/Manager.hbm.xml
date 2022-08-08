@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.wyh.hibernate.one2one.primary">
+    <class name="Manager" table="manager">
+        <id name="mgrId" type="java.lang.Integer">
+            <column name="mgr_id"/>
+            <generator class="native"/>
+        </id>
+        <property name="mgrName" type="java.lang.String">
+            <column name="mgr_name"/>
+        </property>
+        <one-to-one name="department" class="Department"/>
+    </class>
+</hibernate-mapping>

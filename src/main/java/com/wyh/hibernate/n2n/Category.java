@@ -1,9 +1,12 @@
-package com.wyh.hibernatedemo.entity;
+package com.wyh.hibernate.n2n;
 
-public class Worker {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Category {
     private Integer id;
     private String name;
-    private Pay pay;
+    private Set<Item> items = new HashSet<>();
 
     public Integer getId() {
         return id;
@@ -21,11 +24,11 @@ public class Worker {
         this.name = name;
     }
 
-    public Pay getPay() {
-        return pay;
+    public Set<Item> getItems() {
+        return items;
     }
 
-    public void setPay(Pay pay) {
-        this.pay = pay;
+    public void setItems(Set<Item> items) {
+        this.items = items;
     }
 }
